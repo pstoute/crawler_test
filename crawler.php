@@ -45,7 +45,7 @@ $result = mysqli_query($con,"SELECT domain FROM crawlerlist ORDER BY id");
 						$ip = gethostbyname($linkConvert);
 						// Insert converted hostname and IP into new table
 						mysqli_query($con,"INSERT INTO megalist (domain, ip) VALUES ('$linkConvert', '$ip')");
-						echo "  ---  <br/>". $linkConvert ." converted successfully.<br/><br/>";
+						echo "--- ". $linkConvert ." converted successfully.<br/><br/>";
 						mysqli_query($con,"DELETE FROM crawlerlist WHERE domain='$url'");
 					}
 				}
